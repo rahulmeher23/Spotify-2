@@ -10,7 +10,7 @@ const FilterProvider = ({ children }) => {
   const [songs, setSongs] = useState([]);
   const [currentSong, setCurrentSong] = useState();
   const [allSongs, setAllSongs] = useState([]);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   useEffect(() => {
     axios.get(baseURL).then((response) => {

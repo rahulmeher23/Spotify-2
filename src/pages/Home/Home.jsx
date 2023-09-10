@@ -10,7 +10,7 @@ import MobileMenu from "../MobileMenu/MobileMenu";
 
 const Home = () => {
   const baseURL = "https://cms.samespace.com/items/songs";
-  const { allSongs, currentSong } = useContext(FilterContext);
+  const { allSongs, currentSong, setIsPlaying } = useContext(FilterContext);
 
   let { accent } = "";
   const [loading, setLoading] = useState(false);
