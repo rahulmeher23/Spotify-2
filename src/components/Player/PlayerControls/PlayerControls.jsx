@@ -22,8 +22,18 @@ const PlayerControls = () => {
     setIsPlaying,
   } = useContext(FilterContext);
 
+  const length = allSongs.length - 1;
+
   function prevSong() {
-    const length = allSongs.length();
+    if (currentSong > 1) {
+      setCurrentSong(currentSong - 1);
+    }
+  }
+
+  function nextSong() {
+    if (currentSong < length) {
+      setCurrentSong(currentSong + 1);
+    }
   }
 
   return (
@@ -39,7 +49,8 @@ const PlayerControls = () => {
               className="backward-icon"
               icon={faBackward}
               onClick={() => {
-                setIsPlaying(!isPlaying);
+                prevSong();
+                setIsPlaying(true);
               }}
             />
           </div>
@@ -66,7 +77,8 @@ const PlayerControls = () => {
               className="forward-icon"
               icon={faForward}
               onClick={() => {
-                filterDispatch({ type: "NEXT_SONG", payload: "" });
+                nextSong();
+                setIsPlaying(true);
               }}
             />
           </div>

@@ -74,7 +74,7 @@ const MobileMenu = () => {
             <div className="mobile-songs-list-wrapper hide">
               <Navbar />
               <div className="songs-list">
-                {songs.map((song) => {
+                {songs.slice(0, 9).map((song) => {
                   return <SongCard {...song} />;
                 })}
               </div>
