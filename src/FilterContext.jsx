@@ -20,9 +20,6 @@ const FilterProvider = ({ children }) => {
     });
   }, []);
 
-  console.log(songs, "songs");
-  console.log(currentSong, allSongs[currentSong - 1], "currsongs");
-
   return (
     <FilterContext.Provider
       value={{

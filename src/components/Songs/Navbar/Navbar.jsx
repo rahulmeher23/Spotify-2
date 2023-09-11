@@ -45,9 +45,20 @@ const Navbar = () => {
           className="search-bar"
           type="text"
           placeholder="Search Songs, Artists"
-          //   onChange={(e) => {
-          //     filterDispatch({ type: "SEARCH", payload: e.target.value });
-          //   }}
+          onChange={(e) => {
+            // filterDispatch({ type: "SEARCH", payload: e.target.value });
+            setSongs(
+              allSongs.filter(
+                (song) =>
+                  song.name
+                    .toLowerCase()
+                    .includes(e.target.value.toLowerCase()) ||
+                  song.artist
+                    .toLowerCase()
+                    .includes(e.target.value.toLowerCase())
+              )
+            );
+          }}
         />
         <div className="search-icon-container">
           <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} />

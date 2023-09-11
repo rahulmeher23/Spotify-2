@@ -1,3 +1,20 @@
+.for-you-list-display {
+  min-height: 80vh;
+}
+
+.no-items-found {
+  min-height: 30vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 60%;
+}
+
+.songs-list {
+  min-height: 70vh;
+}
+
 @media (max-height: 800px) {
   .songs-list {
     overflow-y: scroll;
