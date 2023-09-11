@@ -32,7 +32,9 @@ const Navbar = () => {
           }
           onClick={() => {
             setTab("topTracks");
-            setSongs(allSongs.filter((song) => song.top_track === true));
+            setSongs(
+              songs.slice(0, 9).filter((song) => song.top_track === true)
+            );
             // filterDispatch({ type: "TOP_TRACKS" });
           }}
         >
