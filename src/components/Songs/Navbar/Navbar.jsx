@@ -48,15 +48,17 @@ const Navbar = () => {
           onChange={(e) => {
             // filterDispatch({ type: "SEARCH", payload: e.target.value });
             setSongs(
-              allSongs.filter(
-                (song) =>
-                  song.name
-                    .toLowerCase()
-                    .includes(e.target.value.toLowerCase()) ||
-                  song.artist
-                    .toLowerCase()
-                    .includes(e.target.value.toLowerCase())
-              )
+              songs
+                .slice(0, 9)
+                .filter(
+                  (song) =>
+                    song.name
+                      .toLowerCase()
+                      .includes(e.target.value.toLowerCase()) ||
+                    song.artist
+                      .toLowerCase()
+                      .includes(e.target.value.toLowerCase())
+                )
             );
           }}
         />
