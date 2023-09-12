@@ -9,6 +9,39 @@ const Navbar = () => {
   const [tab, setTab] = useState("forYou");
   const { songs, setSongs, allSongs } = useContext(FilterContext);
 
+  function handleSearch(e) {
+    const input = e.target.value.toLowerCase();
+    console.log(input, "input");
+
+    let filtered = [];
+    if (input === "") {
+      filtered = allSongs.slice(0, 9);
+    }
+
+    filtered = allSongs
+      .slice(0, 9)
+      .filter(
+        (s) =>
+          s.name.toLowerCase().includes(input) ||
+          s.artist.toLowerCase().includes(input)
+      );
+    setSongs(filtered);
+
+    // setSongs(
+    //   songs
+    //     .slice(0, 9)
+    //     .filter(
+    //       (song) =>
+    //         song.name
+    //           .toLowerCase()
+    //           .includes(e.target.value.toLowerCase()) ||
+    //         song.artist
+    //           .toLowerCase()
+    //           .includes(e.target.value.toLowerCase())
+    //     )
+    // );
+  }
+
   return (
     <div className="menu-search-navbar">
       <div className="menu-navbar">
@@ -33,7 +66,7 @@ const Navbar = () => {
           onClick={() => {
             setTab("topTracks");
             setSongs(
-              songs.slice(0, 9).filter((song) => song.top_track === true)
+              allSongs.slice(0, 9).filter((song) => song.top_track === true)
             );
             // filterDispatch({ type: "TOP_TRACKS" });
           }}
@@ -47,22 +80,7 @@ const Navbar = () => {
           className="search-bar"
           type="text"
           placeholder="Search Songs, Artists"
-          onChange={(e) => {
-            // filterDispatch({ type: "SEARCH", payload: e.target.value });
-            setSongs(
-              songs
-                .slice(0, 9)
-                .filter(
-                  (song) =>
-                    song.name
-                      .toLowerCase()
-                      .includes(e.target.value.toLowerCase()) ||
-                    song.artist
-                      .toLowerCase()
-                      .includes(e.target.value.toLowerCase())
-                )
-            );
-          }}
+          onChange={handleSearch}
         />
         <div className="search-icon-container">
           <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} />
