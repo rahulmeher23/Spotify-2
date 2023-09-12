@@ -22,11 +22,17 @@
   height: 50%;
 }
 
-@media (max-width: 450px) {
+/* @media (max-width: 450px) {
   .songs-list-wrapper {
     width: 100%;
   }
 }
+
+@media (min-width: 450px) and (max-width: 850px) {
+  .songs-list-wrapper {
+    width: 100%;
+  }
+} */
 
 @media (max-width: 1450px) {
   .songs-list-wrapper {

@@ -73,7 +73,7 @@
   opacity: 100%;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 850px) {
   .menu-search-navbar {
     margin: 0px 15px;
     padding: 0px;

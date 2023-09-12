@@ -82,41 +82,9 @@
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 850px) {
   .song-card-wrapper {
-    /* width: 100%; */
-    padding: 0px 5px;
+    padding: 0px 15px;
     margin: 0px 15px;
-    height: 60px;
   }
-
-  .song-cover-details,
-  .song-details {
-    height: 40px;
-  }
-
-  .song-cover-container {
-    width: 40px;
-    height: 40px;
-  }
-
-  .song-cover {
-    width: 40px;
-    height: 40px;
-  }
-
-  .song-name-container,
-  .artist-name-container,
-  .song-duration {
-    height: 20px;
-  }
-
-  .song-name,
-  .artist-name,
-  .song-duration {
-    line-height: 20px;
-  }
-}
-
-@media (max-width: 1450px) {
 }
